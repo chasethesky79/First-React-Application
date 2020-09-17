@@ -11,7 +11,7 @@ export interface IProps {
 export class Confirm extends React.Component<IProps> {
     public static defaultProps = {
         cancelOption: 'Cancel',
-        okOption: 'OKAY'
+        okOption: 'Okay'
     };
     public render() {
         const { title, content, okOption, cancelOption } = this.props;
