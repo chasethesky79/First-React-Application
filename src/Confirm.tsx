@@ -5,7 +5,9 @@ export interface IProps {
     title: string;
     content: string
     cancelOption?: string;
-    okOption?: string
+    okOption?: string;
+    open: boolean;
+    handleCancelClick: () => void;
 }
 
 export class Confirm extends React.Component<IProps> {
@@ -14,9 +16,9 @@ export class Confirm extends React.Component<IProps> {
         okOption: 'Okay'
     };
     public render() {
-        const { title, content, okOption, cancelOption } = this.props;
+        const { title, content, okOption, cancelOption, open } = this.props;
         return (
-            <div className="confirm-wrapper confirm-visible">
+            <div className={open ? "confirm-wrapper confirm-visible" : "confirm-wrapper"}>
                 <div className="confirm-container">
                     <div className="confirm-title-container">
                         <span>{title || 'React and typescript'}</span>
@@ -25,11 +27,15 @@ export class Confirm extends React.Component<IProps> {
                         <span>{content || 'This is where the content should go'}</span>
                     </div>
                     <div className="confirm-buttons-container">
-                        <button className="confirm-cancel">{cancelOption}</button>
+                        <button className="confirm-cancel" onClick={this.onCancelClick}>{cancelOption}</button>
                         <button className="confirm-ok">{okOption}</button>
                     </div>
                 </div>
             </div>
         );
+    }
+
+    private onCancelClick = () => {
+        this.props.handleCancelClick();
     }
 } 
