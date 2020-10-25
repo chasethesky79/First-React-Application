@@ -48,7 +48,8 @@ class App extends React.Component<{}, IState> {
       content: 'React tutorial content',
       cancelOption: 'No way',
       open: this.state.confirmOpen,
-      handleCancelClick: this.handleCancelClickHandler
+      handleCancelClick: this.handleCancelClickHandler,
+      handleConfirmClick: this.handleConfirmClick
     };
 
   return (
@@ -91,7 +92,7 @@ class App extends React.Component<{}, IState> {
     clearInterval(this.timer);
   }
 
-  static getDerivedStateFromProps = (props: {}, state: IState) => {
+  componentDidUpdate = (props: {}, state: IState) => {
     console.log(`STATE AND PROPS ${JSON.stringify(state)}`);
   }
 }
