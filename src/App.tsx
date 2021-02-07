@@ -1,12 +1,17 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { IProps } from '../src/models/input';
+import { IConfirmProps, IProps } from './models/input-props';
 import { Confirm } from './components/Confirm';
 
 const props: IProps = {
   text: 'Fred,Jane,Bob',
   delimiter: ','
+}
+
+const confirmProps: IConfirmProps = {
+  title: 'This is where the title goes',
+  content: 'This is where the content goes'
 }
 
 function App() {
@@ -26,7 +31,7 @@ function App() {
           Learn React
         </a>
       </header>
-      <Confirm/>
+      <Confirm {...confirmProps}/>
     </div>
   );
 }

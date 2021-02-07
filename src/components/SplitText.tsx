@@ -1,5 +1,5 @@
 import { ListWrapper, ListItem } from '../styled-components/styled-components';
-import { IProps } from '../models/input'
+import { IProps } from '../models/input-props'
 
 export const SplitText: React.FC<IProps> = (props: IProps) => {
    const { text, delimiter } = props;
