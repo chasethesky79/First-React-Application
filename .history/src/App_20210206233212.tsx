@@ -1,13 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { IProps } from '../src/models/input';
-import { Confirm } from './components/Confirm';
-
-const props: IProps = {
-  text: 'Fred,Jane,Bob',
-  delimiter: ','
-}
+import { SplitText } from '../src/components/SplitText'
 
 function App() {
   return (
@@ -25,8 +19,8 @@ function App() {
         >
           Learn React
         </a>
+        <SplitText text='Fred,Jane,Bob'/>
       </header>
-      <Confirm/>
     </div>
   );
 }

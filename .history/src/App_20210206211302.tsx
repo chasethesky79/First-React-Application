@@ -1,13 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { IProps } from '../src/models/input';
-import { Confirm } from './components/Confirm';
-
-const props: IProps = {
-  text: 'Fred,Jane,Bob',
-  delimiter: ','
-}
 
 function App() {
   return (
@@ -26,7 +19,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <Confirm/>
     </div>
   );
 }
