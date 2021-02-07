@@ -13,7 +13,7 @@ export const Confirm: React.FC<IConfirmProps> = (props: IConfirmProps) => {
                   <p>{content}</p>
               </div>
               <div className='confirm-buttons-container'>
-                  <button className='confirm-cancel'>{cancelOption}</button>
+                  <button className='confirm-cancel' onClick={handleCancelClick}>{cancelOption}</button>
                   <button className='confirm-ok' onClick={handleOkClick}>{okOption}</button>
               </div>
           </div>

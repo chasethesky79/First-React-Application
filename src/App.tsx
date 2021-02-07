@@ -20,7 +20,7 @@ const App: React.FC<{}> = () => {
     title: 'This is where the title goes',
     content: 'This is where the content goes',
     handleOkClick: () => setAppState({ confirmOpen: false }),
-    handleCancelClick: () => console.log('Cancel Clicked'),
+    handleCancelClick: () => setAppState({ confirmOpen: false }),
     open: appState.confirmOpen
   }
 
