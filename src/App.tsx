@@ -3,18 +3,27 @@ import logo from './logo.svg';
 import './App.css';
 import { IConfirmProps, IProps } from './models/input-props';
 import { Confirm } from './components/Confirm';
+import { IState } from '../src/models/input-props';
+import { useState } from 'react';
 
 const props: IProps = {
   text: 'Fred,Jane,Bob',
   delimiter: ','
 }
-
-const confirmProps: IConfirmProps = {
-  title: 'This is where the title goes',
-  content: 'This is where the content goes'
+const iState: IState = {
+  confirmOpen: true
 }
 
-function App() {
+const App: React.FC<{}> = () => {
+  const [appState, setAppState] = useState(iState);
+  const confirmProps: IConfirmProps = {
+    title: 'This is where the title goes',
+    content: 'This is where the content goes',
+    handleOkClick: () => setAppState({ confirmOpen: false }),
+    handleCancelClick: () => console.log('Cancel Clicked'),
+    open: appState.confirmOpen
+  }
+
   return (
     <div className="App">
       <header className="App-header">
